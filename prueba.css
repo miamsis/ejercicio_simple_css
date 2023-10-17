@@ -1,34 +1,55 @@
 .container {
-    background: repeating-linear-gradient(45deg, #6414aa, #720b82 10px, #b82e04 10px, #b94f09 20px);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 300px;
+    height: 300px;
+    background: repeating-linear-gradient(45deg,
+            red,
+            red 50px,
+            yellow 50px,
+            yellow 100px);
 }
-
-/* .container: aqui utilizo background que son lineas de colores que estan en el fondo del contenedor. Cada color se representará como una raya en el patrón. */
 
 .circle {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    /* .circle aqui puse border-radius para hacer que los <div> se muestren como circulitos miamsi de piu */
-    /* aqui hice que se posicionaran los círculos en una trayectoria diagonal */
-    position: absolute;
-    /* y aqui puse la propiedad transition para lograr un efecto de transicion suave al pasar el cursor sobre cada circulo */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background-color: blue;
+    place-self: center;
+    transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
-.circle:nth-child(1) {
-    top: 10px;
-    left: 10px;
+.circle:nth-child(odd) {
+    background-color: green;
 }
 
-.circle:nth-child(2) {
-    top: 30px;
-    left: 30px;
+.circle:hover {
+    background-color: purple;
+    transform: scale(1.2);
 }
 
-.circle:nth-child(3) {
-    top: 50px;
-    left: 50px;
+.container :nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
 }
 
-.circle:nth-child(4) {
-    top: 70px;
-    left: 70px;
+.container :nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.container :nth-child(3) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.container :nth-child(4) {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.container :nth-child(5) {
+    grid-column: 5;
+    grid-row: 5;
 }
